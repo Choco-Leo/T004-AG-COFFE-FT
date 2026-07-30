@@ -1,0 +1,56 @@
+nav.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: var(--color-oscuro);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1000;
+}
+nav.navbar a {
+  color: var(--color-claro);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav.navbar a:hover {
+  color: var(--color-secundario);
+}
+
+.section {
+  padding: 4rem 1rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Colores de las secciones */
+.home-section {
+  background-color: var(--color-oscuro);
+  color: var(--color-claro);
+}
+.productos-section {
+  background-color: var(--color-fondo);
+  color: var(--color-oscuro);
+}
+.menu-section {
+  background-color: var(--color-principal);
+  color: #fff;
+}
+.nosotros-section {
+  background-color: var(--color-verde);
+  color: var(--color-secundario);
+}
+.contacto-section {
+  background-color: var(--color-secundario);
+  color: var(--color-oscuro);
+}
+
+footer.footer {
+  background-color: var(--color-oscuro);
+  color: var(--color-claro);
+  text-align: center;
+  padding: 1rem 0;
+}

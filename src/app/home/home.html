@@ -1,0 +1,50 @@
+<header class="navbar">
+  <nav class="navbar">
+    <a href="#home" (click)="scrollToSection('home')">Inicio</a>
+    <a href="#productos" (click)="scrollToSection('productos')">Productos</a>
+    <a href="#menu" (click)="scrollToSection('menu')">Menú</a>
+    <a href="#nosotros" (click)="scrollToSection('nosotros')">Nosotros</a>
+    <a href="#contacto" (click)="scrollToSection('contacto')">Contacto</a>
+  </nav>
+</header>
+
+<div class="home-container">
+<section id="home" class="section home-section">
+  <div class="content">
+    <h1>Bienvenido a {{ empresa }}</h1>
+    <p>Sabores que despiertan tus sentidos.</p>
+  </div>
+</section>
+
+<section id="productos" class="section productos-section">
+  <div class="content">
+    <h2>Productos</h2>
+    <p>Descubre nuestra variedad de cafés, tés y delicias artesanales.</p>
+  </div>
+</section>
+
+<section id="menu" class="section menu-section">
+  <div class="content">
+    <h2>Menú</h2>
+    <p>Explora nuestras especialidades: bebidas calientes, frías y acompañamientos.</p>
+  </div>
+</section>
+
+<section id="nosotros" class="section nosotros-section">
+  <div class="content">
+    <h2>Nosotros</h2>
+    <p>Una historia de pasión por el café, creada para compartir contigo.</p>
+  </div>
+</section>
+
+<section id="contacto" class="section contacto-section">
+  <div class="content">
+    <h2>Contacto</h2>
+    <p>Visítanos o escríbenos para más información y reservas.</p>
+  </div>
+</section>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2025 {{ empresa }} Todos los derechos reservados.</p>
+</footer>
