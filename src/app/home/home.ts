@@ -16,10 +16,19 @@ export class Home implements OnInit, OnDestroy {
   empresa: string = EMPRESA;
 
   encabezadoActivo: boolean = false;
+  mostrarBotonSubir = false;
 
   @HostListener('window:scroll')
   detectarDesplazamiento(): void {
     this.encabezadoActivo = window.scrollY > 50;
+    this.mostrarBotonSubir = window.scrollY > 50;
+  }
+  
+  subirArriba(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
   imagenesMenu: { src: string; alt: string }[] = [
@@ -78,4 +87,5 @@ export class Home implements OnInit, OnDestroy {
     this.detenerAutoplay();
     this.iniciarAutoplay();
   }
+
 }
