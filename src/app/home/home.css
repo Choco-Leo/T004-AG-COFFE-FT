@@ -71,6 +71,8 @@ main {
 section {
 
   box-sizing: border-box;
+  width: 100%;
+
 }
 
 /* Sección principal de la cafetería */
@@ -335,11 +337,11 @@ section {
 
 /* Botón de WhatsApp */
 .contacto-whatsapp {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: 1rem;
-  width: 100%;
-  max-width: 26rem;
+  width: 90%;
   padding: 1rem 1.5rem;
   background-color: var(--color-verde);
   border-radius: 100px;
@@ -392,6 +394,8 @@ section {
 .contacto-redes {
   width: 100%;
   margin-top: 3rem;
+
+
 }
 .redes-titulo {
   margin: 0 0 1.2rem;
@@ -402,11 +406,14 @@ section {
 }
 .redes-contenedor {
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
 .red-social {
+  box-sizing: border-box;
+  width: 90%;
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -480,7 +487,7 @@ section {
 
   .redes-contenedor {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
   }
 }
 
