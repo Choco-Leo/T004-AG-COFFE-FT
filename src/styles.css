@@ -7,12 +7,16 @@
   --color-verde: #005949;
   --color-fondo: #D7C5B8;
   --color-secundario: #DCD0E4;
-}
 
-html, body {
-  margin: 0;
+  --color-text: #3f3f3f;
+  --color-oscuro2: #1d1d1d;
 }
 
 body {
-    background-color: var(--color-fondo);
+  margin: 0; 
+  background-size: 15rem;
+  background-attachment: fixed;
+  font-family: TT Drugs, sans-serif;
+  background-color: var(--color-verde);
+  background-image: url('/xv.png');
 }

@@ -1,50 +1,188 @@
-<header class="navbar">
-  <nav class="navbar">
-    <a href="#home" (click)="scrollToSection('home')">Inicio</a>
-    <a href="#productos" (click)="scrollToSection('productos')">Productos</a>
-    <a href="#menu" (click)="scrollToSection('menu')">Menú</a>
-    <a href="#nosotros" (click)="scrollToSection('nosotros')">Nosotros</a>
-    <a href="#contacto" (click)="scrollToSection('contacto')">Contacto</a>
+
+
+<header class="encabezado"  [class.encabezado-activo]="encabezadoActivo">
+  <nav class="navi" aria-label="Navegación principal">
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#menu">Menús</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
   </nav>
 </header>
 
-<div class="home-container">
-<section id="home" class="section home-section">
-  <div class="content">
-    <h1>Bienvenido a {{ empresa }}</h1>
-    <p>Sabores que despiertan tus sentidos.</p>
-  </div>
-</section>
-
-<section id="productos" class="section productos-section">
-  <div class="content">
-    <h2>Productos</h2>
-    <p>Descubre nuestra variedad de cafés, tés y delicias artesanales.</p>
-  </div>
-</section>
-
-<section id="menu" class="section menu-section">
-  <div class="content">
-    <h2>Menú</h2>
-    <p>Explora nuestras especialidades: bebidas calientes, frías y acompañamientos.</p>
-  </div>
-</section>
-
-<section id="nosotros" class="section nosotros-section">
-  <div class="content">
-    <h2>Nosotros</h2>
-    <p>Una historia de pasión por el café, creada para compartir contigo.</p>
-  </div>
-</section>
-
-<section id="contacto" class="section contacto-section">
-  <div class="content">
-    <h2>Contacto</h2>
-    <p>Visítanos o escríbenos para más información y reservas.</p>
-  </div>
-</section>
+<div class="header">
+<img src="/LG4.png" alt="Logo institucional" id="logo" href="#">
 </div>
 
-<footer class="footer">
-  <p>&copy; 2025 {{ empresa }} Todos los derechos reservados.</p>
-</footer>
+
+<main>
+  <section id="inicio" class="inicio-cafeteria">
+    <div class="inicio-contenedor">
+
+      <div class="inicio-imagen">
+        <img src="/vw1.jpeg" alt="Interior de nuestra cafetería">
+      </div>
+
+      <div class="inicio-informacion">
+        <span class="inicio-etiqueta">Bienvenido</span>
+
+        <h1>Un buen momento comienza con algo delicioso</h1>
+
+        <p>
+          Disfruta café recién preparado, bebidas, postres y alimentos elaborados con ingredientes de calidad, listos para acompañarte a donde vayas.
+
+        </p>
+
+        <p>
+          Queremos que cada visita sea sencilla y agradable: eliges lo que más se te antoje, nosotros lo preparamos y tú te llevas un pequeño momento especial.
+        </p>
+
+        <a href="#menu" class="boton-menu">
+          Conocer nuestro menú
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="nosotros">
+    <div class="nosotros-contenedor">
+      <h3 class="nosotros-titulo">"Somos una cafetería, donde se quiere dar experiencias de vida a la gente, con sabores inovadores y productos de calidad"</h3>
+    </div>
+    
+  </section>
+
+<section id="menu" class="seccion-menu">
+  <div class="menu-contenedor">
+  <h2>Nuestro Menú</h2>
+
+  <div class="menu-carrusel">
+    <div class="carrusel-viewport">
+      <div
+        class="carrusel-pista"
+        [style.transform]="'translateX(-' + (indiceActual * 100) + '%)'"
+      >
+        @for (imagen of imagenesMenu; track imagen.src) {
+          <div class="carrusel-slide">
+            <img [src]="imagen.src" [alt]="imagen.alt">
+          </div>
+        }
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="carrusel-control carrusel-anterior"
+      (click)="imagenAnterior()"
+      aria-label="Imagen anterior"
+    >
+      &#10094;
+    </button>
+    <button
+      type="button"
+      class="carrusel-control carrusel-siguiente"
+      (click)="siguienteImagen()"
+      aria-label="Imagen siguiente"
+    >
+      &#10095;
+    </button>
+
+    <div class="carrusel-indicadores">
+      @for (imagen of imagenesMenu; track imagen.src; let i = $index) {
+        <button
+          type="button"
+          class="carrusel-punto"
+          [class.carrusel-punto-activo]="i === indiceActual"
+          (click)="irAImagen(i)"
+          [attr.aria-label]="'Ir a la imagen ' + (i + 1)"
+        ></button>
+      }
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <div class="contacto-contenido">
+
+    <span class="contacto-subtitulo">Contáctanos</span>
+
+    <h2 class="contacto-titulo">
+      ¿Qué se te antoja hoy?
+    </h2>
+
+    <p class="contacto-descripcion">
+      Elige tus favoritos y haz tu pedido.
+      Nosotros nos encargamos del resto.
+    </p>
+
+    <!-- WhatsApp -->
+    <a
+      href="https://wa.me/8344004225"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="contacto-whatsapp"
+    >
+      <span class="whatsapp-icono">
+        <i class="fa-brands fa-whatsapp"></i>
+      </span>
+
+      <span class="whatsapp-texto">
+        <small>Haz tu pedido por</small>
+        <strong>WhatsApp</strong>
+      </span>
+
+      <span class="whatsapp-flecha">→</span>
+    </a>
+
+    <!-- Redes sociales -->
+    <div class="contacto-redes">
+
+      <p class="redes-titulo">
+        También puedes seguirnos
+      </p>
+
+      <div class="redes-contenedor">
+
+        <!-- Instagram -->
+        <a
+          href="https://www.instagram.com/ganelycoffee"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="red-social"
+        >
+          <i class="fa-brands fa-instagram"></i>
+
+          <div>
+            <strong>Instagram</strong>
+            <span>Conoce nuestras novedades</span>
+          </div>
+        </a>
+
+        <!-- Facebook -->
+        <a
+          href="https://www.facebook.com/share/19GfRXR8r3/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="red-social"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+
+          <div>
+            <strong>Facebook</strong>
+            <span>Promociones y publicaciones</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <p class="contacto-frase">
+      Tú eliges el antojo. Nosotros lo preparamos. ♡
+    </p>
+
+  </div>
+</section>
+
+</main>
